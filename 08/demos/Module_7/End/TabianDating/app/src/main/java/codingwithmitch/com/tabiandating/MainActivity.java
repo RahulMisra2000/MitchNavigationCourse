@@ -34,8 +34,9 @@ import codingwithmitch.com.tabiandating.util.PreferenceKeys;
 
 public class MainActivity extends AppCompatActivity implements 
         IMainActivity,                                                  // so fragments can call methods in the activity
-        BottomNavigationViewEx.OnNavigationItemSelectedListener,        // event listener for the navigation bar
-        NavigationView.OnNavigationItemSelectedListener{
+        BottomNavigationViewEx.OnNavigationItemSelectedListener,        // event listener for the Navigation Bar WIDGET     ****
+        NavigationView.OnNavigationItemSelectedListener                 // event listener for the Drawer Navigation WIDGET  ****
+        {
 
     private static final String TAG = "MainActivity";
 
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements
 
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
-
 
             case R.id.home: {
                 mFragmentsTags.clear();
@@ -168,9 +168,9 @@ public class MainActivity extends AppCompatActivity implements
     private AgreementFragment  mAgreementFragment;
 
     //widgets
-    private BottomNavigationViewEx mBottomNavigationViewEx;
+    private BottomNavigationViewEx mBottomNavigationViewEx;                                     // Bottom Navigation Bar WIDGET
     private ImageView mHeaderImage;
-    private DrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout;                                 
 
     //vars
     private ArrayList<String> mFragmentsTags = new ArrayList<>();
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements
 
         isFirstLogin();
         setHeaderImage();
-        initBottomNavigationView();
+        initBottomNavigationView();             // Bottom Navigation Bar
         setNavigationViewListener();
         init();
     }
@@ -317,12 +317,14 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    /* *** Setting event handler for the *** Navigation Drawer WIDGET *** */            
     private void setNavigationViewListener() {
         Log.d(TAG, "setNavigationViewListener: initializing navigation drawer onclicklistener.");
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    /* *** Setting options and event handler for the *** Bottom Navigation Bar WIDGET *** */
     private void initBottomNavigationView() {
         Log.d(TAG, "initBottomNavigationView: initializing bottom navigation view.");
         mBottomNavigationViewEx.enableAnimation(false);
