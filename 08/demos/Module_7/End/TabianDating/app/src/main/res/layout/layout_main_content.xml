@@ -12,10 +12,12 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_nav_view"/>
 
+    // This is a 3rd party open source navigation bar WIDGET --------------------------------
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:id="@+id/bottom_nav_view"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"                                                              
+        // The items of the menu specified below will show up on the navigation bar ---------                                                             
         app:menu="@menu/bottom_navigation_menu"
         android:layout_alignParentBottom="true">
 
