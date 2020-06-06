@@ -32,7 +32,9 @@ import codingwithmitch.com.tabiandating.models.User;
 import codingwithmitch.com.tabiandating.settings.SettingsFragment;
 import codingwithmitch.com.tabiandating.util.PreferenceKeys;
 
-public class MainActivity extends AppCompatActivity implements IMainActivity, BottomNavigationViewEx.OnNavigationItemSelectedListener,
+public class MainActivity extends AppCompatActivity implements 
+        IMainActivity,                                                  // so fragments can call methods in the activity
+        BottomNavigationViewEx.OnNavigationItemSelectedListener,        // event listener for the navigation bar
         NavigationView.OnNavigationItemSelectedListener{
 
     private static final String TAG = "MainActivity";
